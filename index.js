@@ -14,14 +14,14 @@ app.get("/", function (req, res) {
 });
 
 app.post("/api/fileanalyse", upload.single("upfile"), (req, res) => {
-  console.log("File info", {
-    name: req.file.filename,
-    maybeName: req.file.originalname,
-    type: req.file.mimetype,
-    size: req.file.size,
-  });
+  // console.log("File info", {
+  //   name: req.file.filename,
+  //   maybeName: req.file.originalname,
+  //   type: req.file.mimetype,
+  //   size: req.file.size,
+  // });
   res.json({
-    name: req.file.filename,
+    name: req.file.originalname,
     type: req.file.mimetype,
     size: req.file.size,
   });
